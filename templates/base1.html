@@ -1,19 +1,73 @@
-{% load static tailwind_tags %}
+{% load static %}
+{% load tailwind_tags %}
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="light">
 <head>
-    <title>Django Tailwind</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Soluciones Solares GDL</title>
     {% tailwind_css %}
 </head>
 
-<body class="bg-red-500 text-black font-serif leading-normal tracking-normal">
-<div class="container mx-auto">
-    <section class="flex items-center justify-center h-screen">
-        <h1 class="text-5xl">Django + Tailwind = ❤️</h1>
-    </section>
-</div>
+<body class="bg-white dark:bg-gray-900 transition-colors duration-200">
+    <!-- Navbar -->
+    <nav class="sticky flex items-center justify-between flex-wrap bg-cyan-700 p-6 z-20 top-0 start-0 fixed">
+        <button id="menuBtn" class="text-sky-50 text-3x1 text-main font-bold hover:font-light">☰</button>
+        <div class="text-2x1 h-12">
+            <img src="{% static 'images/logo.webp' %}" alt="logo" class="w-[100px] lg:w-[150px] sm:w-[130px]  h-auto object-contain">
+        </div>
+        <div class="w-8"></div>
+    </nav>
+
+    <!-- Sidebar para filtros -->
+    <div id="sideMenu" class="fixed left-0 top-0 h-full w-64 -translate-x-full p-6 transform z-20">
+        <h2 class="text-xl font-extrabold mb-6 border-b pb-2 border-lime-400 text-accent">FILTROS DE ALTO RENDIMIENTO</h2>
+
+        <ul class="space-y-4">
+            <li><a href="#" class="block text-gray-300 hover:text-accent font-medium transition duration-150 border-l-4 border-transparent hover:border-accent pl-2">Potencia y Watts</a></li>
+            <li><a href="#" class="block text-gray-300 hover:text-accent font-medium transition duration-150 border-l-4 border-transparent hover:border-accent pl-2">Capacidad Térmica</a></li>
+            <li><a href="#" class="block text-gray-300 hover:text-accent font-medium transition duration-150 border-l-4 border-transparent hover:border-accent pl-2">Garantía Extrema</a></li>
+            <li><a href="#" class="block text-gray-300 hover:text-accent font-medium transition duration-150 border-l-4 border-transparent hover:border-accent pl-2">Accesorios Tácticos</a></li>
+            <li><a href="#" class="block text-gray-300 hover:text-accent font-medium transition duration-150 border-l-4 border-transparent hover:border-accent pl-2">Línea Industrial</a></li>
+        </ul>
+    </div>
+
+    <!-- OVERLAY (Sombra oscura para el fondo) -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-70 hidden"></div>
+
+    <!-- Borrar - Solo para pruebas de scroll -->
+    <div class="h-[1500px]"></div>
+
+    <!-- SCRIPT DEL MENÚ de filtros-->
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const sideMenu = document.getElementById("sideMenu");
+        const overlay = document.getElementById("overlay");
+
+        /**
+         * Función para abrir el menú lateral.
+         */
+        const openMenu = () => {
+            sideMenu.classList.remove("-translate-x-full");
+            overlay.classList.remove("hidden");
+            document.body.style.overflow = 'hidden';
+        };
+
+        /**
+         * Función para cerrar el menú lateral.
+         */
+        const closeMenu = () => {
+            sideMenu.classList.add("-translate-x-full");
+            overlay.classList.add("hidden");
+            document.body.style.overflow = '';
+        };
+
+        // Evento para abrir el menú
+        menuBtn.onclick = openMenu;
+
+        // Evento para cerrar el menú al hacer clic en el overlay
+        overlay.onclick = closeMenu;
+    </script>
 </body>
 </html>
