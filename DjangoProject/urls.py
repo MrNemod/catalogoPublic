@@ -19,13 +19,12 @@ from django.contrib import admin
 from django.urls import path
 
 from DjangoProject import settings
-from DjangoProject.settings import BASE_DIR
 from appTest import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('index/', views.home, name='index2'),
+    path('test/', views.test, name='test'),
 ]
 
 if settings.DEBUG:

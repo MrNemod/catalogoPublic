@@ -1,10 +1,10 @@
 from django.shortcuts import render
-import theme
+from theme import templates
 
 # Create your views here.
 
 def index(request):
-    return render(request, 'base1.html')
-
-def home(request):
     return render(request, 'base.html')
+
+def test(request):
+    return render(request, 'base1.html')

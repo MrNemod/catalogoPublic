@@ -125,9 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    BASE_DIR / 'theme' / 'static',
 ]
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+# NPM DIR
+NPM_BIN_PATH = r'D:\npm.cmd'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
