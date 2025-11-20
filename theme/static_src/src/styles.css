@@ -1,8 +1,0 @@
-@import "tailwindcss";
-@tailwind utilities;
-
-@source "../../**/*.{html,py,js}";
-
-#sideMenu-link:hover {
-    @apply bg-fuchsia-800;
-}
