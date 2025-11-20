@@ -24,7 +24,6 @@ from appTest import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('test/', views.test, name='test'),
 ]
 
 if settings.DEBUG:
