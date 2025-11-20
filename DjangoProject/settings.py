@@ -31,7 +31,8 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['localhost',
                  '127.0.0.1',
-                 'https://catalogo-rthg.onrender.com',]
+                 'https://catalogo-rthg.onrender.com',
+                 'catalogo-rthg.onrender.com',]
 
 
 # Application definition
