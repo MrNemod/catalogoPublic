@@ -1,5 +1,6 @@
 db.sqlite3
 node_modules
 .venv
+.env/
 theme/static/
 theme/static_src/
