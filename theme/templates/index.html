@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}Soluciones Solares GDL{% endblock %}
+{% block content %}
+<!-- CARDS para productos -->
+<div class="antialiased text-gray-900 h-full flex w-full justify-center items-center">
+
+  <div class="bg-gray-200 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-4 md:p-2 xl:p-5">
+{% for heater in heaters %}
+        {% for _ in rango %}
+            <div class="relative bg-white rounded-lg overflow-hidden shadow-2xl group transition-transform duration-300 hover:translate-y-[-10px] justify-self-center w-full">
+              <div class="h-48 w-full overflow-hidden">
+                      <img class="h-full w-full object-cover transform overflow-hidden transition-transform duration-[300ms] group-hover:scale-125 object-end" src="{{ heater.image }}" alt="Imagen de {{ heater.name }}" />
+              </div>
+
+              <div class="p-6 pb-4 group-hover:bg-gray-700 duration-[0.3s]">
+
+
+               <div class="mt-1">
+                  <span class="text-2xl font-semibold group-hover:text-white">${{ heater.price }}</span>
+                  <span class="text-gray-600 text-sm">/ mxn</span>
+                </div>
+                <p class="mt-1 font-semibold text-xl leading-tight truncate group-hover:text-teal-600 duration-[0.3s]">{{ heater.name }}</p>
+                <p class="Card-info text-gray-500 mt-2 group-hover:text-white leading-tight truncate">
+                    {{ heater.description }}
+                </p>
+
+                  <div class="mt-1 flex items-center">
+                    <div class="ml-1">
+                      <p class="text-sm font-medium text-gray-900">
+                        <p class="group-hover:text-teal-600  duration-[0.3s]">Litros: {{ heater.liters }}</p>
+                        <p class="group-hover:text-teal-600  duration-[0.3s]">Personas: {{ heater.persons }}</p>
+                        <p class="group-hover:text-teal-600  duration-[0.3s]">Tubos: {{ heater.number_of_tubes }}</p>
+                        <p class="group-hover:text-teal-600  duration-[0.3s]">Marca: {{ heater.brand }}</p>
+                      </p>
+                      <div class="flex space-x-1 text-sm text-gray-500 group-hover:text-white duration-[0.3s] ">
+                        <a href="https://wa.me/3338310980">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-icon lucide-message-circle"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
+                        </a>
+                        <a href="https://wa.me/3338310980">Contactar</a>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+        {% endfor %}
+{% endfor %}
+    </div>
+</div>
+{% endblock %}
