@@ -11,6 +11,7 @@ class ImageKitStorage(Storage):
 
         # 🔹 Abrir la imagen original con Pillow
         image = Image.open(content)
+        image = image.resize((350,200))
 
         # 🔹 Convertir a WebP en memoria
         buffer = io.BytesIO()
