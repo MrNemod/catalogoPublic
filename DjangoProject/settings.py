@@ -31,7 +31,7 @@ IMAGEKIT_URL_ENDPOINT = os.getenv("IMAGEKIT_URL_ENDPOINT")
 IMAGEKIT_FOLDER = os.getenv("IMAGEKIT_FOLDER")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [os.getenv("ALLOWED_HOSTS")]
 
