@@ -6,7 +6,7 @@
 
   <div class="bg-gray-200 grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 p-4 md:p-2 xl:p-5">
 {% for heater in heaters %}
-        <div class="relative bg-white rounded-lg overflow-hidden shadow-2xl group transition-transform duration-300 hover:translate-y-[-10px] justify-self-center w-full">
+        <div class="relative bg-white rounded-lg overflow-hidden shadow-2xl group transition-transform duration-300 hover:translate-y-[-10px] justify-self-center w-full" onclick="window.location='details/'">
           <div class="h-48 w-full overflow-hidden">
                   <img class="h-full w-full object-cover block transform overflow-hidden transition-transform duration-[300ms] group-hover:scale-125 object-end" src="{{ heater.image }}" alt="Imagen de {{ heater.name }}" />
           </div>
@@ -32,10 +32,10 @@
                     <p class="group-hover:text-teal-600  duration-[0.3s]">Marca: {{ heater.brand }}</p>
                   </p>
                   <div class="flex space-x-1 text-sm text-gray-500 group-hover:text-white duration-[0.3s] ">
-                    <a href="https://wa.me/3338310980">
+                    <a href="https://wa.me/3338310980?text=Me%20interesa%20mas%20informacion%20de%20*{{ heater.name }}*">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle-icon lucide-message-circle"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"/></svg>
                     </a>
-                    <a href="https://wa.me/3338310980">Contactar por whatsapp</a>
+                    <a href="https://wa.me/3338310980?text=Me%20interesa%20mas%20informacion%20de%20*{{ heater.name }}*">Contactar por whatsapp</a>
                   </div>
                 </div>
               </div>

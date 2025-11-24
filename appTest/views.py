@@ -32,3 +32,6 @@ def index(request):
             'image': first_image.image if first_image.image else None,
         })
     return render(request, 'index.html', {"heaters": heater_data, "rango": range(len(heater_data))})
+
+def details(request):
+    return render(request, "product.html")
