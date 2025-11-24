@@ -34,6 +34,11 @@ class solarLight(base_model):
         verbose_name_plural = 'Lamparas solares'
         verbose_name = 'Lampara solar'
 
+class testProduct(base_model):
+    test = models.IntegerField( blank=False, null=False, verbose_name="Test")
+    test2 = models.EmailField(blank=False, null=False, verbose_name="Email")
+    test3 = models.DateField(blank=False, null=False, verbose_name="Date")
+
 # Agregar productos antes de esta linea
 class productImage(models.Model):
     product = models.ForeignKey(

@@ -2,18 +2,16 @@ const menuBtn = document.getElementById("menuBtn");
 const sideMenu = document.getElementById("sideMenu");
 const overlay = document.getElementById("overlay");
 
-/**
- * Función para abrir el menú lateral.
- */
+
+// Función para abrir el menú lateral.
 const openMenu = () => {
     sideMenu.classList.remove("-translate-x-full");
     overlay.classList.remove("hidden");
     document.body.style.overflow = 'hidden';
 };
 
-/**
- * Función para cerrar el menú lateral.
- */
+
+// Función para cerrar el menú lateral.
 const closeMenu = () => {
     sideMenu.classList.add("-translate-x-full");
     overlay.classList.add("hidden");
