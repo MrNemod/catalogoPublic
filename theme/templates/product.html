@@ -28,7 +28,7 @@
               <span class="text-2xl font-bold mr-2">${{ product.price }}</span>
               </div>
 
-            <p style="max-height: 200px; overflow: auto;" class="text-gray-700 mb-6">{{ product.description|linebreaksbr }}</p>
+            <p style="max-height: 200px; overflow: auto;" class="text-gray-700 mb-6 scrollbar-minimal">{{ product.description|linebreaksbr }}</p>
 
             <div class="flex space-x-4 mb-6">
               <button id="messageButton" onclick="sendMessage('{{ product.name }}')"

@@ -18,9 +18,17 @@
     <!-- Navbar -->
     <nav id="navBar" class="sticky flex items-center justify-between flex-wrap bg-cyan-700 p-6 top-0 start-0 fixed z-10">
         <button id="menuBtn" class="text-sky-50 text-3x1 text-main font-bold hover:font-light">☰</button>
+        {% if request.path == '/'%}
         <div class="text-2x1 h-12">
             <img src="{% static 'images/logo.webp' %}" alt="logo" class="w-[150px] lg:w-[160px] sm:w-[150px]  h-auto object-contain">
         </div>
+        {% else %}
+        <a href="/">
+        <div class="text-2x1 h-12">
+            <img src="{% static 'images/logo.webp' %}" alt="logo" class="w-[150px] lg:w-[160px] sm:w-[150px]  h-auto object-contain">
+        </div>
+        </a>
+        {% endif %}
         <div class="w-8"></div>
     </nav>
 
