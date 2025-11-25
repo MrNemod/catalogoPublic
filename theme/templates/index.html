@@ -7,7 +7,7 @@
 
 {% for product in products %}
         <div class="relative bg-white rounded-lg overflow-hidden shadow-2xl group transition-transform duration-300 hover:translate-y-[-10px] justify-self-center w-full"
-             onclick="window.location='details/{{ product.id }}'">
+             onclick="window.location='{% url 'details' product.id %}'">
 
           <div class="h-48 w-full overflow-hidden">
                   <img class="h-full w-full object-cover block transform overflow-hidden transition-transform duration-[300ms] group-hover:scale-125 object-end" src="{{ product.image }}" alt="Imagen de {{ product.name }}" />

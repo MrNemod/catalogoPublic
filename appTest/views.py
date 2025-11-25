@@ -1,5 +1,6 @@
 from django.http import Http404
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render
+from .hashids import decode_id, encode_id
 from .models import *
 
 # Create your views here.
@@ -24,7 +25,7 @@ def index(request):
     for heater in heaters:
         first_image = heater.images.first()
         all_data.append({
-            'id': heater.id,
+            'id': encode_id(heater.id),
             'name': heater.name,
             'description': heater.description,
             'price': heater.price,
@@ -38,7 +39,7 @@ def index(request):
     for light in lights:
         first_image = light.images.first()
         all_data.append({
-            'id': light.id,
+            'id': encode_id(light.id),
             'name': light.name,
             'description': light.description,
             'price': light.price,
@@ -51,7 +52,7 @@ def index(request):
     for test in tests:
         first_image = test.images.first()
         all_data.append({
-            'id': test.id,
+            'id': encode_id(test.id),
             'name': test.name,
             'description': test.description,
             'price': test.price,
@@ -66,7 +67,10 @@ def index(request):
 
 # Vista dinamica de los productos
 EXCLUDED_FIELDS = ['id', 'description', 'price', 'brand', 'product', 'base_model_ptr']
-def details(request, product_id):
+def details(request, hashid):
+    product_id = decode_id(hashid)
+    if not product_id:
+        raise Http404("El producto no existe.")
     # Para agregar nuevas categorias solo seguir la misma estructura
     try:
         product = solarHeater.objects.get(pk=product_id)
